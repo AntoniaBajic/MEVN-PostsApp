@@ -4,10 +4,11 @@ const url = 'http://localhost:5000/api/posts/';
 
 class PostService {
   // Get Posts
+
   static getPosts() {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       try {
-        const res = await axios.get(url);
+        const res = axios.get(url);
         const data = res.data;
         resolve(
           data.map((post) => ({
